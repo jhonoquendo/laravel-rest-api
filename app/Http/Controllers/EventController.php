@@ -10,18 +10,18 @@ class EventController extends Controller
 {
     public function store(Request $request){
 
-        if($request->input('type') === 'deposit'){
+        if($request->input('type') === 'deposito'){
             return $this->deposit(
                 $request->input('destination'),
                 $request->input('name'),
                 $request->input('amount')
             );
-        }else if($request->input('type') === 'withdraw'){
+        }else if($request->input('type') === 'retiro'){
             return $this->withdraw(
                 $request->input('origin'),
                 $request->input('amount')
             );
-        }else if($request->input('type') === 'transfer'){
+        }else if($request->input('type') === 'transferencia'){
             return $this->transfer(
                 $request->input('origin'),
                 $request->input('destination'),

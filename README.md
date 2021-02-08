@@ -60,3 +60,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## Instalacion de Cors
+
+//Instalamos
+composer require fruitcake/laravel-cors
+
+//Agregamos esta linea al archivo app/Http/Kernel.php
+//en "protected $middleware"
+\Fruitcake\Cors\HandleCors::class,
+
+//Creamos arvhivo de conficuración
+php artisan vendor:publish --tag="cors"
+
+//Abrimos el archivo de configuracion config/cors.php y agregamos el Path que queremos darle acceso de origenes
+'paths' => ['api/*'],
